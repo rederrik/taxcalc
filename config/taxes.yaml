@@ -1,0 +1,5 @@
+parameters:
+  tax_rates:
+    DE: 0.19
+    IT: 0.22
+    GR: 0.24

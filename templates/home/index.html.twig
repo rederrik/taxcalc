@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to the Tax Calculator{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-4">Welcome to the Tax Calculator</h1>
+        <p>
+            This application helps to calculate the final cost of a product, including taxes, based on the buyer's tax
+            number.
+            Currently, we support tax calculations for the following countries: Germany, Italy, and Greece.
+        </p>
+
+        <h2 class="my-4">How it Works</h2>
+        <p>
+            Simply select a product and enter your tax number. The application will automatically calculate the final
+            product price,
+            including the appropriate tax based on the country code in your tax number.
+        </p>
+
+        <h2 class="my-4">Adding New Products</h2>
+        <p>
+            New products can be added by updating the "products.yaml" configuration file located in the "config" folder.
+            Each product should be added as a new item in the "products" array, with a "name" and "price" property. For
+            example:
+
+            <pre>
+                products:
+                  - name: 'New Product'
+                    price: 50
+            </pre>
+        </p>
+
+        <h2 class="my-4">Adding New Tax Data</h2>
+        <p>
+            New tax data can be added by updating the "taxes.yaml" configuration file located in the "config" folder.
+            Each country's tax rate should be added as a new item in the "tax_rates" array, with the country code as the
+            key and the tax rate as the value. For example:
+
+            <pre>
+            tax_rates:
+                'FR': 20
+            </pre>
+        </p>
+        <p>
+            Note: The tax rates should be given as percentages (e.g., 20 for 20%).
+        </p>
+        <a href="{{ path('purchase_form') }}" class="btn btn-primary mt-4">Calculate Product Price</a>
+    </div>
+{% endblock %}

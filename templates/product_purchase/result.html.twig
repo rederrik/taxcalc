@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Purchase Success{% endblock %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1 class="display-5">Thank you for your purchase!</h1>
+        <p class="lead">Your order has been placed successfully.</p>
+        <hr class="my-4">
+        <h3>The final price of your product, including taxes, is:</h3>
+        <h2 id="finalprice">{{ finalPrice }} EUR</h2>
+        <a class="btn btn-primary btn-lg" href="{{ path('purchase_form') }}" role="button">Purchase another product</a>
+    </div>
+{% endblock %}

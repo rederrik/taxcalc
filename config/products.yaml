@@ -1,0 +1,6 @@
+parameters:
+  products:
+    - name: 'Headphones'
+      price: 100
+    - name: 'Phone Case'
+      price: 20

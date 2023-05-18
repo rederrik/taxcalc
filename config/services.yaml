@@ -1,0 +1,20 @@
+imports:
+    - { resource: 'products.yaml' }
+    - { resource: 'taxes.yaml' }
+
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+    App\Service\TaxCalculator:
+        arguments:
+            $taxRates: '%tax_rates%'
+    App\Service\ProductsProvider:
+        arguments:
+            $productsConfig: '%products%'
